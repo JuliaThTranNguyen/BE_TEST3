@@ -1,0 +1,36 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "api/index.ts",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "api/index.ts" }
+    ],
+    "dev": {
+      "functions": {
+        "api/**/*.ts": {
+          "port": 3000
+        }
+      }
+    },
+    "functions": {
+      "api/**/*.ts": {
+        "memory": 512
+      }
+    },
+    "env": {
+      "MY_ENV_VAR": "my-value"
+    },
+    "build": {
+      "env": {
+        "BUILD_ENV_VAR": "build-time-value"
+      },
+      "postinstall": "npm run build",
+      "use": "@vercel/node"
+    },
+    "start": "nodemon --watch './**/*.ts' --exec ts-node index.ts"
+  }
+  
