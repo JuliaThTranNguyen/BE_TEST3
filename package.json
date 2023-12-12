@@ -10,7 +10,8 @@
     "init-db": "ts-node ./db/initDb.ts",
     "build": "tsc",
     "test": "jest --verbose --watchAll=false --detectOpenHandles --forceExit",
-    "test-coverage": "npm run test -- --coverage"
+    "test-coverage": "npm run test -- --coverage",
+    "vercel-build": "echo hello"
   },
   "keywords": [],
   "author": "",
