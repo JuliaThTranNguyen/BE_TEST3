@@ -4,3 +4,4 @@ data.json
 dist
 .env
 coverage
+.vercel
